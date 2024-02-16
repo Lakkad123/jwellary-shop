@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_to_cart</title>
+    <script>
+        function totalo(){
+            var order = document.getElementById('addbtn').value;
+            var price = document.getElementById('priceor').value;
+            var totalorder =price*order;
+            document.getElementById('totalprice').value=totalorder;
+        }
+    </script>
+</head>
+<body class="alert-success">
+    <%-
+    include("navbar");
+    %>
+    
+    <div style="padding-top:50px;" class="text-center">
+            <div class="pl"><h2> &nbsp; ADD_TO_CART &nbsp; </h2></div>
+        </div>
+    </div>
+    <div class="row mt-5 ml-5">
+        <div class="col-4 card mb-5 ml-5" style="border:none;">
+                    <div class="card p-3" style="width: 100%;">
+                        <img class="card-img-top" src="<%=data.image%>" alt="Card image cap" width=250px height=250px>
+                         <br>
+                        <h5 class="card-title"><%=data.name%></h5>
+                         <br>
+                            <p class="card-text"><%=data.category%></p>
+                            <p class="card-text">₹<%=data.price%></p>                       
+                     </div>
+        </div>
+        <div class="col-6 alert-danger ml-5" style="padding:50px;border:2px solid black;width:00px;">
+            <form action="/insertOrder" method="post">
+                <input type="hidden" value="<%=data.id%>" name="id">
+                <input type="text" class="form-control pb-3" name="email" value="<%=session.email%>" disabled ><br>
+                <input type="text" name="name" class="form-control pb-3" placeholder="<%=session.name%>" ><br>
+                <input type="text" name="phone" class="form-control pb-3" placeholder="<%=session.phoneNumber%>" ><br>
+                <textarea name="address" id="address" class="form-control pb-3" cols="20" rows="2" placeholder="Enter Address" ><%=session.address%></textarea><br>
+                <label for="" class="ml-4 mt-1 " style="font-size:20px;float:left;">Price  &nbsp; :&nbsp;</label><input type="text" id="priceor" name="priceor" class="mt-1" value="<%=data.price%>"  disabled /> <b class="ml-3">ADD</b>
+                <input type="number" id="addbtn" name="addbtn" class="mt-1" value="1" style="width: 50px;" min=1 oninput="totalo()" ><br><br>
+                <label for="price" style="margin-left:25px;font-size:20px;">Total&nbsp;&nbsp;&nbsp; :  &nbsp;₹ <input id="totalprice" name="tprice" class="pl-3"style="color:black;" value="<%=data.price%>" disabled /></label>
+                <input type="submit" name="pay" value="Pay" class="btn btn-success ml-5 mt-1" style="width:80px;">
+              
+            </form>
+        </div>
+        <div class="col-2">
+
+        </div>
+</div>
+</body>
+</html>

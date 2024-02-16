@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="../home.css">
+        <style>
+        .adminheading {
+            margin-top: 0px;
+            margin-bottom: 2px;
+            color: black;
+            background: white;
+            text-align: center;
+            padding-top: 0px;
+            height: 60px;
+            font-size: 20px;
+        }
+
+        .rtable {
+            margin-left: 1%;
+            margin-right: 1%;
+            width: 98%;
+            margin-top: 5px;
+            overflow-x: auto;
+            height: 300px;
+            border: 2px solid black;
+        }
+
+        .logintable {
+            margin-left: 1%;
+            margin-right: 1%;
+            width: 98%;
+            margin-top: 5px;
+            overflow-x: auto;
+            height: 300px;
+            border: 2px solid black;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="adminheading ">
+            <h1> <span style="border-bottom:2px solid red;">Admin</span> </h1>
+        </div>
+
+        <div class="container-fluid">
+            <!-- registration -->
+            <section id="registration">
+                <div
+                    style="width:98%;background:blue;color:white;padding:15px;margin:1%;height:66px;">
+                    <h3 style="float:left;">Registration<br></h3>
+                    <form action="#registration" method="POST">
+
+                    </form>
+                </div>
+                <div class="rtable">
+                    <table border=2 class="table table-light" align="center">
+                        <thead>
+                            <tr class="table-danger">
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th colspan="2">Opration</th>
+
+                            </tr>
+                        </thead>
+                        <%for(var i=0;i<user.length;i++){%>
+
+                            <tbody class="table-striped" id="usertable">
+                                <tr>
+                                    <td>
+                                        <%= user[i]._id %>
+                                    </td>
+                                    <td>
+                                        <%= user[i].name %>
+
+                                    </td>
+                                    <td>
+                                        <%= user[i].email %>
+
+                                    </td>
+                                    <td>
+                                        <%= user[i].password %>
+
+                                    </td>
+                                    <td>
+                                        <%= user[i].phoneNumber %>
+                                    </td>
+                                    <td>
+                                        <%= user[i].address %>
+                                    </td>
+
+                                    <td align="center"><a
+                                            href="admin/delete?id=<%=user[i].id%>&delete=user"
+                                            onclick="return deleteconform()"><i
+                                                class="fa fa-trash-o"
+                                                style="font-size:25px;color:red"></i></a></td>
+                                </tr>
+
+                                <%}%>
+
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- product -->
+                <section id="Product">
+                    <div
+                        style="width:98%;background:blue;color:white;padding:15px;margin:1%;height:66px;">
+                        <h3 style="float:left;">Product</h3>
+
+                        <a href="admin/addproduct" style="color:rgb(255, 0, 0);"
+                            class="ml-5">add</a>
+                    </div>
+                    <div class="rtable">
+                        <table border=2 class="table table-light">
+                            <thead>
+                                <tr class="table-danger">
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Image</th>
+                                    <th colspan="2">Opration</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="table-striped" id="producttable">
+                                <%for(var i=0;i<product.length;i++){%>
+
+                                    <tr>
+                                        <td>
+                                            <%= product[i]._id %>
+                                        </td>
+
+                                        <td>
+                                            <%= product[i].name %>
+                                        </td>
+
+                                        <td>
+                                            <%= product[i].price %>
+                                        </td>
+                                        <td>
+                                            <%= product[i].description %>
+
+                                        </td>
+
+                                        <td>
+                                            <%= product[i].category %>
+
+                                        </td>
+                                        <td><img
+                                                src="<%=product[i].image%>"
+                                                alt width="100px"
+                                                height="60px"></td>
+
+                                        <td align="center"><a
+                                                href="admin/updateProduct?id=<%=product[i].id%>"
+                                                <i
+                                                class="fa fa-edit"
+                                                style="font-size:25px"></i></a></td>
+                                    <td align="center"><a
+                                            href="admin/delete?id=<%=product[i].id%>&delete=product"
+                                            onclick="return deleteconform()"><i
+                                                class="fa fa-trash-o"
+                                                style="font-size:25px;color:red"></i></a></td>
+
+                                </tr>
+
+                                <%}%>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- order -->
+                <section id="Productorder">
+                    <div
+                        style="width:98%;background:blue;color:white;padding:15px;margin:1%;height:66px;">
+                        <h3 style="float:left;">Order</h3>
+
+                    </div>
+                    <div class="rtable">
+                        <table border=2 class="table table-light">
+                            <thead>
+                                <tr class="table-danger">
+                                    <th>ID</th>
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Address</th>
+                                    <th>ProductName</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Date</th>
+                                    <th>Image</th>
+                                    <th colspan="2">Opration</th>
+
+                                </tr>
+                            </thead>
+                            <tbody class="table-striped" id="producttable">
+                                <%for(var i=0;i<order.length;i++){%>
+
+                                    <tr>
+                                        <td>
+                                            <%=order[i].id%>
+                                        </td>
+                                        <td>
+                                            <%=order[i].email%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].name%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].phoneNumber%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].address%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].productName%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].price%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].quantity%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].total%>
+
+                                        </td>
+                                        <td>
+                                            <%=order[i].date%>
+
+                                        </td>
+                                        <td><img
+                                                src="<%=order[i].image%>"
+                                                alt width="100px"
+                                                height="60px"></td>
+
+                                        <td align="center"><a
+                                                href="admin/delete?id=<%=order[i].id%>&delete=order"
+                                                onclick="return deleteconform()"><i
+                                                    class="fa fa-trash-o"
+                                                    style="font-size:25px;color:red"></i></a></td>
+                                    </tr>
+                                    <%}%>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </script>
+            </body>

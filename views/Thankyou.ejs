@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thankyou</title>
+</head>
+<body class="alert-success">
+    
+        <div style="padding-left: 26px;padding-top: 102px;width:98%;">
+            <h1 style="border-bottom: 4px solid red;padding-bottom: 6px;"  class="text-center">You Order Conform...</h1>
+            <br>
+        </div><br>
+        <div class="row">
+       
+        <div class="col-3 mb-3 m-3">
+            <div class="card" style="width:100%;border:2px solid black;margin-left:2%;">
+                <img class="card-img-top" src="<%=data.image%>" style="float:left;width:30%;margin:3%;height:250px;" alt="Card image cap">
+                <div class="card-body" >
+                    <h5 class="card-title">Name:<%=data.name%></h5>
+                    <h5 class="card-title">Date:<%=data.date%></h5>
+                    <p class="card-text">Order : <%=data.productName%></p>
+                    <p class="card-text">Address : <%=data.address%></p>
+                    <p class="card-text">Qty : <%=data.quantity%></p>
+                    <p class="card-text">Price : <%=data.price%></p>
+                    <hr><p class="card-text">Total : <%=data.total%></p></hr>
+                    <a href="#" class="btn btn-primary">Complete Order</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+</body>
+</html>

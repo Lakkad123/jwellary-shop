@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="home.css">
+        <style>
+        .pcr {
+            transition: 0.1s;
+        }
+
+        .pcr:hover {
+
+            box-shadow: 0px 0px 20px 11px #000000e8;
+        }
+
+        .a1 {
+            background-image: linear-gradient(#00000036, #00000052), url(image/about1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 630px;
+            transition: 0.05s;
+        }
+
+        .a2 {
+            background-image: linear-gradient(#00000036, #00000052), url(image/about2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 430px;
+            transition: 0.05s;
+        }
+
+        .a1:hover {
+            border-radius: 80px 0px;
+            box-shadow: 0px 0px 20px 11px #000000e8;
+        }
+
+        .a2:hover {
+            border-radius: 80px 0px;
+            box-shadow: 0px 0px 20px 11px #000000e8;
+        }
+
+        .img2 {
+            width: 150px;
+            margin-left: 30px;
+            margin-top: 40px;
+        }
+
+        .aboutcontainer {
+            margin-top: 100px;
+            width: 100%;
+            height: 320px;
+            background-image: linear-gradient(#000000a1, #000000e0), url(image/loginback.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .logoname {
+            margin-left: 150px;
+            float: left;
+        }
+
+        .aboutmenu {
+            padding-top: 50px;
+            margin-left: 540px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .aboutcontect {
+            margin-top: -58px;
+            margin-left: 160px;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <!--   HOME   -->
+    <section id="Home">
+
+        <%- include('navbar') %>
+        <div class="img1">
+            <div class="tt">
+                <div class="text1">
+                    <h4>Custom <span id="del">Crystal</span></h4>
+                    <h1>Jewellery Addiction</h1>
+                    <p><span id="ss">"&nbsp;</span>Happiness is wearing
+                        jewellery."<span id="ss">&nbsp;"</span></p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Product">
+        <br>
+        <h1 class="text-center"><span style="border-bottom:2px solid red;">Collection</span></h1>
+        <div class="productcontainer">
+            <div class="row pl-5 pb-1 pr-5 pt-4">
+                <div class="col-4 pcr">
+                    <div class="card p-3" style="width: 100%;">
+                        <img class="card-img-top" src="image/b10.jpg"
+                            alt="Card image cap" width=250px height=250px>
+                        <h5 class="card-title text-center p-2">Bracelates</h5>
+                        <a href="product" class="btn btn-dark">Order</a>
+                    </div>
+                </div>
+                <div class="col-4 pcr">
+                    <div class="card p-3" style="width: 100%;">
+                        <img class="card-img-top" src="image/neck25.jpg"
+                            alt="Card image cap" width=250px height=250px>
+                        <h5 class="card-title text-center p-2">Necklace</h5>
+                        <a href="prod1" class="btn btn-dark">Order</a>
+                    </div>
+                </div>
+                <div class="col-4 pcr">
+                    <div class="card p-3" style="width: 100%;">
+                        <img class="card-img-top" src="image/e12.jpg"
+                            alt="Card image cap" width=250px height=250px>
+                        <h5 class="card-title text-center p-2">Earrings</h5>
+                        <a href="prod2" class="btn btn-dark">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="About">
+        <div class="cont1">
+            <h1 class="text-center" style="padding-top:100px;"><span
+                    style="border-bottom:2px solid red;">About</span>
+            </h1>
+            <div class="row p-5">
+                <div class="col-5 pl-5">
+                    <h1 class="pt-2">Crystal Jewellery</h1><br>
+                    <p>Custom crystal jewellery, hand-selected necklaces,
+                        bracelets, and more. Customize your order to
+                        match your intention.<br> We source each stone
+                        individually to ensure you are choosing the
+                        highest energy possible, crafted with care.
+
+                        Crystalstone.com's custom crystal jewellery collection.<br><br>
+                        Immerse yourself in a world of
+                        hand-selected necklaces, bracelets, and more, all
+                        crafted to resonate with your unique
+                        intentions.
+
+                        At Crystalstone.com, we hold a profound belief in the
+                        transformative power of crystals, and
+                        that's why we embark on a journey to source each stone
+                        individually. <br><br>This commitment
+                        ensures that when you choose our custom jewelry, you're
+                        embracing the pinnacle of energetic
+                        potential, a creation infused with care and dedication.
+
+                        Our stone curation guarantees that each custom piece
+                        becomes a harmonious embodiment of
+                        intention and beauty.<br><br> Every necklace and
+                        bracelet emerges as a conduit for positive
+                        energy, a beacon of transformation that aligns
+                        seamlessly with your desires.</p>
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-5 a1">
+
+                </div>
+            </div>
+            <div class="row p-5">
+                <div class="col-5 pl-5 a2">
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-5 ">
+                    <h1 class="pt-2">Born out of a vision to heal with some of
+                        our planet’s most precious natural
+                        elements.</h1><br>
+                    <p>Earth’s inhabitants have used crystals and color therapy
+                        for their healing properties for many
+                        centuries.</p>
+                    <p>This potent crystal represents a number of different
+                        meanings. </p>
+                    <p>Fluorite is a stone heralded for its spiritual
+                        detoxification abilities and tendency to transform
+                        negative energy into positive energy, boosting our
+                        mental clarity and promoting peace of mind.
+                    </p>
+                </div>
+            </div><br><br>
+            <div class="abouttitle">
+                <h1 class="text-center"><span
+                        style="border-bottom:2px solid red;">OUR MANTRA</span></h1>
+                <h4 class="p-5 m-3">
+                    “We believe in the power of crystals as dailytools to
+                    practice balance of mind, body, and spirit,
+                    which is why each crystal is hand-selected and energetically
+                    cleansed with care to ensure their
+                    utmost quality and readiness.”
+                </h4>
+            </div>
+
+        </div>
+        <div" style="margin-top:50px;">
+            <div class="aboutcontainer">
+                <div class="logoname">
+                    <img class="mt-5" style="width:120px;height:120px;"
+                        src="image/logo13.png" alt>
+                    <br>
+                    <h5>Custom Crystal</h5>
+                    <p style="margin-left:-70px;">
+                        "Every Pieces Of Jewellery Tells a Story"</p>
+                    <p style="margin-left:-70px;">A GIRL NEVER HAS ENOUGH
+                        JEWELLERY</p>
+                </div>
+                <div class="aboutmenu">
+                    <h1
+                        style="margin-left: 38px;border-bottom:2px solid red;width:16%;"><b>MENU</b></h1>
+                    <ul>
+                        <li><a href="home">Home
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2192;</a></li>
+                        <li><a href="home#Product">Product&nbsp;&nbsp; &#x2192;</a></li>
+                        <li><a href="home#About">About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &#x2192;</a></li>
+                        <li><a href="term">Terms
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2192;</a></li>
+                    </ul>
+                </div>
+                <div class="aboutcontect"
+                    style=" float:left;font-family: 'Josefin Sans', sans-serif;">
+                    <h1
+                        style="margin-left: 38px;border-bottom:2px solid red;width:46%;"><b>CONTECT</b></h1><br>
+                    <img src="image/gmail.png" alt
+                        style="width: 100px;height: 40px;padding-left: 37px;margin-top: 1px;">
+                    <span
+                        style="font-size:30px;" class>crystalstone@gmail.com</span>
+                    <br><br><br>
+                    <img src="image/instagram.png" alt
+                        style="width: 100px;height: 40px;padding-left: 37px;margin-top: 1px;">
+                    <img src="image/facebook.png" alt
+                        style="width: 80px;height: 40px;padding-left: 20px;margin-top: 1px;">
+                    <img src="image/twiter.png" alt
+                        style="width: 80px;height: 40px;padding-left: 20px;margin-top: 1px;">
+                    <img src="image/whatsapp.png" alt
+                        style="width: 120px;height: 60px;padding-left: 10px;margin-top: 1px;">
+
+                </div>
+            </div>
+            <section>
+            </div>
+        </body>
+
+    </html>
